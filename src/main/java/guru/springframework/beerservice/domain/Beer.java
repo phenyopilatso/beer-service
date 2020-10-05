@@ -17,7 +17,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
-public class beer {
+public class Beer {
 
     @Id
     @GeneratedValue(generator = "UUID")
