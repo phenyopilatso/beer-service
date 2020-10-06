@@ -54,6 +54,7 @@ class BeerControllerTest {
     }
 
     BeerDto getValidBeerDto(){
+
         return BeerDto.builder()
                 .beerName("Castle")
                 .beerStyle(BeerStyleEnum.GOSE)
