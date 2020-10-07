@@ -6,15 +6,19 @@ import guru.springframework.beerservice.web.model.BeerDto;
 import guru.springframework.beerservice.web.model.BeerDto.BeerDtoBuilder;
 import guru.springframework.beerservice.web.model.BeerStyleEnum;
 import javax.annotation.processing.Generated;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-10-06T14:05:42+0200",
-    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (Amazon.com Inc.)"
+    date = "2020-10-07T15:36:45+0200",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.8 (N/A)"
 )
 @Component
 public class BeerMapperImpl implements BeerMapper {
+
+    @Autowired
+    private DateMapper dateMapper;
 
     @Override
     public BeerDto beerToBeerDto(Beer beer) {
@@ -28,6 +32,7 @@ public class BeerMapperImpl implements BeerMapper {
         if ( beer.getVersion() != null ) {
             beerDto.version( beer.getVersion().intValue() );
         }
+        beerDto.createdDate( dateMapper.asOffsetDateTime( beer.getCreatedDate() ) );
         beerDto.beerName( beer.getBeerName() );
         if ( beer.getBeerStyle() != null ) {
             beerDto.beerStyle( Enum.valueOf( BeerStyleEnum.class, beer.getBeerStyle() ) );
@@ -52,6 +57,7 @@ public class BeerMapperImpl implements BeerMapper {
         if ( beerDto.getVersion() != null ) {
             beer.version( beerDto.getVersion().longValue() );
         }
+        beer.createdDate( dateMapper.asTimestamp( beerDto.getCreatedDate() ) );
         beer.beerName( beerDto.getBeerName() );
         if ( beerDto.getBeerStyle() != null ) {
             beer.beerStyle( beerDto.getBeerStyle().name() );

@@ -34,7 +34,10 @@ public class Beer {
 
     @UpdateTimestamp
     private Timestamp latModifiedDate;
+
+
     private String beerName;
+
     private String beerStyle;
 
     @Column(unique = true)
