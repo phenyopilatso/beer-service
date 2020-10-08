@@ -2,7 +2,7 @@ package guru.springframework.beerservice.web.controller;
 
 import guru.springframework.beerservice.services.BeerService;
 import guru.springframework.beerservice.web.model.BeerDto;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/beer")
 @RestController
 public class BeerController {

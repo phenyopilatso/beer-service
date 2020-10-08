@@ -1,5 +1,6 @@
 package guru.springframework.beerservice.model;
 
+import guru.springframework.beerservice.bootstrap.BeerLoader;
 import guru.springframework.beerservice.web.model.BeerDto;
 import guru.springframework.beerservice.web.model.BeerStyleEnum;
 
@@ -17,7 +18,7 @@ public class BaseTest {
                 .createdDate(OffsetDateTime.now())
                 .lastModifiedDate(OffsetDateTime.now())
                 .price(new BigDecimal("12.99"))
-                .upc(123123123123L)
+                .upc(BeerLoader.BEER_2_UPC)
                 .quantityOnHand(45)
                 .build();
     }
