@@ -1,23 +1,22 @@
 package guru.springframework.beerservice.bootstrap;
 
 import guru.springframework.beerservice.domain.Beer;
-import guru.springframework.beerservice.repositories.BeerRepositories;
+import guru.springframework.beerservice.repositories.BeerRepository;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-@Component
+//@Component
 public class BeerLoader implements CommandLineRunner {
 
     public static final String BEER_2_UPC = "0631234300019";
     public static final String BEER_3_UPC = "0083783375213";
     public static final String BEER_1_UPC = "0631234200036";
 
-    private final BeerRepositories beerRepositories;
+    private final BeerRepository beerRepository;
 
-    public BeerLoader(BeerRepositories beerRepositories) {
-        this.beerRepositories = beerRepositories;
+    public BeerLoader(BeerRepository beerRepository) {
+        this.beerRepository = beerRepository;
     }
 
     @Override
@@ -26,9 +25,9 @@ public class BeerLoader implements CommandLineRunner {
     }
 
     private void loadBeerObjects() {
-        if(beerRepositories.count() == 0){
+        if(beerRepository.count() == 0){
 
-            beerRepositories.save(Beer.builder()
+            beerRepository.save(Beer.builder()
                 .beerName("Mango Bobs")
                 .beerStyle("IPA")
                 .quantityToBrew(200)
@@ -37,7 +36,7 @@ public class BeerLoader implements CommandLineRunner {
                 .price(new BigDecimal("20.00"))
                 .build());
 
-            beerRepositories.save(Beer.builder()
+            beerRepository.save(Beer.builder()
                 .beerName("Galaxy Cat")
                 .beerStyle("Pale Ale")
                 .quantityToBrew(100)
@@ -46,7 +45,7 @@ public class BeerLoader implements CommandLineRunner {
                 .price(new BigDecimal("10.00"))
                 .build());
 
-            beerRepositories.save(Beer.builder()
+            beerRepository.save(Beer.builder()
                   .beerName("No Hammers")
                   .beerStyle("Pale Ale")
                   .quantityToBrew(500)
