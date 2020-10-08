@@ -62,7 +62,7 @@ class BeerControllerTest {
                                         parameterWithName("isCold").description("Is Beer Cold Query Param")
                                 ),
                                 responseFields(
-                                        fieldWithPath("id").description("Id of Beer"),
+                                        fieldWithPath("beerId").description("Id of Beer"),
                                         fieldWithPath("version").description("Version number"),
                                         fieldWithPath("createdDate").description("Date Created"),
                                         fieldWithPath("lastModifiedDate").description("Date Updated"),
@@ -88,7 +88,7 @@ class BeerControllerTest {
                 .andExpect(status().isCreated())
                 .andDo(document("v1/beer-post",
                                 requestFields(
-                                        fields.withPath("id").ignored(),
+                                        fields.withPath("beerId").ignored(),
                                         fields.withPath("version").ignored(),
                                         fields.withPath("createdDate").ignored(),
                                         fields.withPath("lastModifiedDate").ignored(),
@@ -113,7 +113,7 @@ class BeerControllerTest {
                 .andExpect(status().isNoContent())
                 .andDo(document("v1/beer-put",
                                 requestFields(
-                                        fields.withPath("id").ignored(),
+                                        fields.withPath("beerId").ignored(),
                                         fields.withPath("version").ignored(),
                                         fields.withPath("createdDate").ignored(),
                                         fields.withPath("lastModifiedDate").ignored(),
