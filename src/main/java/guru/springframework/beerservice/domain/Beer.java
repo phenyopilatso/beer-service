@@ -37,7 +37,6 @@ public class Beer {
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
 
-
     private String beerName;
 
     private String beerStyle;
@@ -48,5 +47,5 @@ public class Beer {
     private BigDecimal price;
 
     private Integer minOnHand;
-    private  Integer quantityToBrew;
+    private Integer quantityToBrew;
 }
