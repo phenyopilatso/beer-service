@@ -1,0 +1,8 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 172
+
+{"version":null,"createdDate":null,"lastModifiedDate":null,"beerName":"Castle","beerStyle":"GOSE","upc":"0631234300019","price":"10.00","quantityOnHand":null,"beerId":null}
+----
