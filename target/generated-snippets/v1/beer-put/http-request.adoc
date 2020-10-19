@@ -1,6 +1,6 @@
 [source,http,options="nowrap"]
 ----
-PUT /api/v1/beer/043ba936-6d45-4e04-bc47-9cd8203691f5 HTTP/1.1
+PUT /api/v1/beer/289ed00b-9720-4f76-9e60-4b809a15d546 HTTP/1.1
 Content-Type: application/json
 Host: dev.springframework.guru:80
 Content-Length: 172
