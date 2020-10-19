@@ -15,4 +15,5 @@ C:\Users\Phenyo\Documents\learning\spring-boot-udemy\springframeworkguru\beer-se
 C:\Users\Phenyo\Documents\learning\spring-boot-udemy\springframeworkguru\beer-service\src\main\java\guru\springframework\beerservice\web\model\BeerPagedList.java
 C:\Users\Phenyo\Documents\learning\spring-boot-udemy\springframeworkguru\beer-service\src\main\java\guru\springframework\beerservice\services\inventory\BeerInventoryService.java
 C:\Users\Phenyo\Documents\learning\spring-boot-udemy\springframeworkguru\beer-service\src\main\java\guru\springframework\beerservice\web\mappers\DateMapper.java
+C:\Users\Phenyo\Documents\learning\spring-boot-udemy\springframeworkguru\beer-service\src\main\java\guru\springframework\beerservice\config\CacheConfig.java
 C:\Users\Phenyo\Documents\learning\spring-boot-udemy\springframeworkguru\beer-service\src\main\java\guru\springframework\beerservice\web\model\BeerDto.java

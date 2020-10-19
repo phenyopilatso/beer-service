@@ -20,4 +20,5 @@ guru\springframework\beerservice\domain\Beer$BeerBuilder.class
 guru\springframework\beerservice\web\controller\MvcExceptionHandler.class
 guru\springframework\beerservice\web\model\BeerDto.class
 guru\springframework\beerservice\web\model\BeerDto$BeerDtoBuilder.class
+guru\springframework\beerservice\config\CacheConfig.class
 guru\springframework\beerservice\web\controller\NotFoundException.class

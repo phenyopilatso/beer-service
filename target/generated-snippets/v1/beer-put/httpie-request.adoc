@@ -1,5 +1,5 @@
 [source,bash]
 ----
-$ echo '{"version":null,"createdDate":null,"lastModifiedDate":null,"beerName":"Castle","beerStyle":"GOSE","upc":"0631234300019","price":"10.00","quantityOnHand":null,"beerId":null}' | http PUT 'https://dev.springframework.guru:80/api/v1/beer/d8ce3f20-96e2-49fe-9487-bb9e22b15753' \
+$ echo '{"version":null,"createdDate":null,"lastModifiedDate":null,"beerName":"Castle","beerStyle":"GOSE","upc":"0631234300019","price":"10.00","quantityOnHand":null,"beerId":null}' | http PUT 'https://dev.springframework.guru:80/api/v1/beer/a23bb6bb-3f01-4872-8fad-6dc8efdfcbe5' \
     'Content-Type:application/json'
 ----
