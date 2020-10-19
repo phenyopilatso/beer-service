@@ -1,6 +1,6 @@
 [source,bash]
 ----
-$ curl 'https://dev.springframework.guru:80/api/v1/beer/a23bb6bb-3f01-4872-8fad-6dc8efdfcbe5' -i -X PUT \
+$ curl 'https://dev.springframework.guru:80/api/v1/beer/043ba936-6d45-4e04-bc47-9cd8203691f5' -i -X PUT \
     -H 'Content-Type: application/json' \
     -d '{"version":null,"createdDate":null,"lastModifiedDate":null,"beerName":"Castle","beerStyle":"GOSE","upc":"0631234300019","price":"10.00","quantityOnHand":null,"beerId":null}'
 ----

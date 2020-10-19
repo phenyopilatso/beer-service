@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BeerMapperDecorator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">beer-service</a> &gt; <a href="index.source.html" class="el_package">guru.springframework.beerservice.web.mappers</a> &gt; <span class="el_source">BeerMapperDecorator.java</span></div><h1>BeerMapperDecorator.java</h1><pre class="source lang-java linenums">package guru.springframework.beerservice.web.mappers;
+
+import guru.springframework.beerservice.domain.Beer;
+import guru.springframework.beerservice.services.inventory.BeerInventoryService;
+import guru.springframework.beerservice.web.model.BeerDto;
+import org.springframework.beans.factory.annotation.Autowired;
+
+<span class="nc" id="L8">public abstract class BeerMapperDecorator implements BeerMapper {</span>
+    private BeerInventoryService beerInventoryService;
+    private BeerMapper beerMapper;
+
+    @Autowired
+    public void setBeerInventoryService(BeerInventoryService beerInventoryService){
+<span class="nc" id="L14">        this.beerInventoryService = beerInventoryService;</span>
+<span class="nc" id="L15">    }</span>
+
+    @Autowired
+    public void setBeerMapper(BeerMapper beerMapper){
+<span class="nc" id="L19">        this.beerMapper = beerMapper;</span>
+<span class="nc" id="L20">    }</span>
+
+    @Override
+    public BeerDto beerToBeerDto(Beer beer) {
+<span class="nc" id="L24">        return beerMapper.beerToBeerDto(beer);</span>
+    }
+
+    @Override
+    public BeerDto beerToBeerDtoWithInventory(Beer beer) {
+<span class="nc" id="L29">        BeerDto beerDto = beerMapper.beerToBeerDto(beer);</span>
+<span class="nc" id="L30">        beerDto.setQuantityOnHand(beerInventoryService.getQuantityOnHand(beer.getId()));</span>
+<span class="nc" id="L31">        System.out.println(beerDto);</span>
+<span class="nc" id="L32">        return beerDto;</span>
+    }
+
+    @Override
+    public Beer beerDtoToBeer(BeerDto beerDto) {
+<span class="nc" id="L37">        return beerMapper.beerDtoToBeer(beerDto);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
