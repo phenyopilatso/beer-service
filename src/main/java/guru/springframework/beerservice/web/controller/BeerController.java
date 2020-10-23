@@ -60,9 +60,9 @@ public class BeerController {
     }
 
     @GetMapping("beerUpc/{upc}")
-    public ResponseEntity<BeerDto> getBeerByUpc(@PathVariable("upc") String beerUpc){
+    public ResponseEntity<BeerDto> getBeerByUpc(@PathVariable("upc") String upc){
 
-        return new ResponseEntity<>(beerService.getByUpc(beerUpc), HttpStatus.OK);
+        return new ResponseEntity<>(beerService.getByUpc(upc), HttpStatus.OK);
     }
 
     @PostMapping("beer")
